@@ -1,20 +1,24 @@
-# Rajae Elkamili — Portfolio
+# Rajae Elkamili, Portfolio
 
-A responsive single-page portfolio built with HTML, CSS, and vanilla JavaScript. The page is self-contained in `index.html`, so GitHub Pages can serve it directly from the repository root.
+Static portfolio (HTML, CSS, vanilla JavaScript), served by GitHub Pages at https://rajaeelkamili.github.io/portfolio/
 
-## About
-Engineering student at ENSAJ in the Engineering Program in Information and Communication Systems (ISIC), exploring Agentic AI, applied machine learning, retrieval systems, and software engineering.
+## Features
+- English / French toggle, dark / light theme
+- 20 projects with filters, search and a case study for each (problem, what I built, results, stack, links, screenshots)
+- Results charts for the MLOps and sentiment-analysis projects
+- Experience, skills, certifications, contact, downloadable CV
+- Responsive, keyboard accessible, respects reduced-motion
 
-## Sections
-- Selected work
-- Experience
-- About and technical toolkit
-- Contact links
+## Structure
+- `index.html`: page shell and SEO metadata
+- `assets/data.js`: all content (EN and FR) and the project list
+- `assets/app.js`: rendering, filters, project case studies, animations
+- `assets/style.css`: design
+- `assets/img/`: screenshots and the social preview image
+- `cv/CV_Rajae_Elkamili.pdf`: CV
+
+## Add or edit a project
+Edit the `PROJECTS` array in `assets/data.js` (one object per project, text in `en` and `fr`). No build step.
 
 ## Run locally
-Open `index.html` in a modern browser. No build step or package installation is required.
-
-## Deployment
-This repository is prepared for GitHub Pages. In the repository, open **Settings → Pages**, select **Deploy from a branch**, choose **main** and **/(root)**, then save.
-
-The OCP internship project is intentionally described at a high level because it is private. Add public repository links or a CV only when you are ready to share them.
+Open `index.html` in a browser.
