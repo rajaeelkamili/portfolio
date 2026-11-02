@@ -401,14 +401,22 @@ window.PROJECTS = [
     links: { repo: "https://github.com/rajaeelkamili/titanic-survival-classifier" },
   },
   {
-    id: "anomaly-prototype", cats: ["ml", "iot"], status: "wip", year: "2026",
+    id: "anomaly-prototype", cats: ["ml", "iot"], status: "public", year: "2026",
     icon: "wave",
-    title: { en: "Anomaly Detection & Predictive Maintenance Prototype", fr: "Prototype de détection d'anomalies et maintenance prédictive" },
-    tag: { en: "Exploratory work with autoencoders on industrial sensor data.", fr: "Travail exploratoire avec des autoencodeurs sur des données capteurs industrielles." },
-    problem: { en: "Detect abnormal behaviour in sensor signals without labelled failures, a core need of industrial maintenance.", fr: "Détecter un comportement anormal dans des signaux de capteurs sans pannes étiquetées, un besoin central de la maintenance industrielle." },
-    approach: { en: ["Autoencoder-based approach, two iterations so far (v1, v2)."], fr: ["Approche par autoencodeurs, deux itérations à ce jour (v1, v2)."] },
-    notes: { en: "Prototype, not finished. I paused it to work on another project and I plan to complete it with a public sensor dataset, detection thresholds and prediction metrics.", fr: "Prototype non terminé. Je l'ai mis en pause pour un autre projet et je prévois de le terminer avec un dataset capteurs public, des seuils de détection et des métriques de prédiction." },
-    stack: ["Python", "Autoencoders", "Time series"],
+    title: { en: "Sensor Anomaly Detection on a Test Bench (SKAB)", fr: "Détection d'anomalies capteurs sur banc d'essai (SKAB)" },
+    tag: { en: "Unsupervised detection on 8 sensors: isolation forest, ECOD and a PyTorch autoencoder, with dashboard and API.", fr: "Détection non supervisée sur 8 capteurs : isolation forest, ECOD et autoencodeur PyTorch, avec tableau de bord et API." },
+    problem: { en: "Detect abnormal behaviour in multivariate sensor signals without labelled failures, and measure honestly how many false alarms each method raises.", fr: "Détecter un comportement anormal dans des signaux de capteurs multivariés sans pannes étiquetées, et mesurer honnêtement le nombre de fausses alarmes de chaque méthode." },
+    approach: {
+      en: ["Public SKAB benchmark (8 sensors, water circulation test bench), 16 test runs.", "Unsupervised protocol: each run is compared to its own first 540 s of normal operation; no anomaly label is used for training or thresholds.", "Three detectors compared: isolation forest, ECOD (PyOD) and a PyTorch autoencoder on sliding windows, plus change-point detection with ruptures.", "Point-level and event-level precision, recall and false alarms; AUROC; automatic report with figures.", "Streamlit dashboard, FastAPI API with Swagger, 9 automated tests."],
+      fr: ["Benchmark public SKAB (8 capteurs, banc de circulation d'eau), 16 essais.", "Protocole non supervisé : chaque essai est comparé à ses 540 premières secondes de fonctionnement normal ; aucune étiquette d'anomalie n'est utilisée pour l'entraînement ou les seuils.", "Trois détecteurs comparés : isolation forest, ECOD (PyOD) et autoencodeur PyTorch sur fenêtres glissantes, plus détection de ruptures avec ruptures.", "Précision, rappel et fausses alarmes par point et par événement ; AUROC ; rapport automatique avec figures.", "Tableau de bord Streamlit, API FastAPI avec Swagger, 9 tests automatisés."]
+    },
+    results: {
+      en: ["The autoencoder ranks anomalies best (AUROC 0.88) but still raises many false alarms (false alarm rate 0.34).", "Isolation forest and ECOD raise no alarm at the chosen threshold and rank poorly (AUROC 0.65 and 0.46).", "A model trained once on the normal file fails on the runs (operating regime shift), documented as a negative result."],
+      fr: ["L'autoencodeur classe le mieux les anomalies (AUROC 0,88) mais déclenche encore beaucoup de fausses alarmes (taux 0,34).", "L'isolation forest et ECOD ne déclenchent aucune alarme au seuil choisi et classent mal (AUROC 0,65 et 0,46).", "Un modèle entraîné une fois sur le fichier normal échoue sur les essais (changement de régime), documenté comme résultat négatif."]
+    },
+    notes: { en: "Prototype on a water-circulation bench, not an engine bench. Results do not transfer as is. Next: stationary features, adaptive threshold, Docker.", fr: "Prototype sur un banc de circulation d'eau, pas un banc moteur. Les résultats ne se transposent pas tels quels. Suite : variables stationnarisées, seuil adaptatif, Docker." },
+    stack: ["Python", "PyTorch", "scikit-learn", "PyOD", "Streamlit", "FastAPI"],
+    links: { repo: "https://github.com/rajaeelkamili/sensor-anomaly-skab" },
   },
   {
     id: "noise-whisper", cats: ["iot", "ml"], status: "wip", year: "2026",
