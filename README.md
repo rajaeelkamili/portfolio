@@ -4,7 +4,7 @@ Static portfolio (HTML, CSS, vanilla JavaScript), served by GitHub Pages at http
 
 ## Features
 - English / French toggle, dark / light theme
-- 20 projects with filters, search and a case study for each (problem, what I built, results, stack, links, screenshots)
+- 21 projects with filters, search and a case study for each (problem, what I built, results, stack, links, screenshots)
 - Results charts for the MLOps and sentiment-analysis projects
 - Experience, skills, certifications, contact, downloadable CV
 - Responsive, keyboard accessible, respects reduced-motion
