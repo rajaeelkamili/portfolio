@@ -51,7 +51,7 @@ window.I18N = {
       title: "Less hype.<br><em>More building.</em>",
       intro: "From agentic systems and MLOps to mobile apps and network simulation. Click a project for the full case study.",
       search: "Search projects, tools...",
-      filters: { all: "All", agentic: "Agentic & RAG", ml: "ML & Deep Learning", fullstack: "Full-stack", mobile: "Mobile", iot: "IoT & Networks" },
+      filters: { all: "All", agentic: "Agentic & RAG", ml: "ML & Deep Learning", fullstack: "Full-stack", mobile: "Mobile", iot: "IoT & Networks", cyber: "Cybersecurity" },
       none: "No project matches this search.",
       open: "Case study", close: "Close",
       status: { public: "Open source", private: "Private", wip: "In progress" },
@@ -159,7 +159,7 @@ window.I18N = {
       title: "Moins de discours.<br><em>Plus de construction.</em>",
       intro: "Des systèmes agentiques et du MLOps aux applications mobiles et à la simulation réseau. Clique sur un projet pour voir l'étude complète.",
       search: "Rechercher un projet, un outil...",
-      filters: { all: "Tous", agentic: "Agentique & RAG", ml: "ML & Deep Learning", fullstack: "Full-stack", mobile: "Mobile", iot: "IoT & Réseaux" },
+      filters: { all: "Tous", agentic: "Agentique & RAG", ml: "ML & Deep Learning", fullstack: "Full-stack", mobile: "Mobile", iot: "IoT & Réseaux", cyber: "Cybersécurité" },
       none: "Aucun projet ne correspond à cette recherche.",
       open: "Étude de cas", close: "Fermer",
       status: { public: "Open source", private: "Privé", wip: "En cours" },
@@ -224,7 +224,7 @@ window.I18N = {
   },
 };
 
-/* cat: agentic | ml | fullstack | mobile | iot  (a project can have several) */
+/* cat: agentic | ml | fullstack | mobile | iot | cyber  (a project can have several) */
 window.PROJECTS = [
   {
     id: "jfc4-copilot", cats: ["agentic", "ml"], status: "private", year: "2026", featured: true,
@@ -258,6 +258,8 @@ window.PROJECTS = [
       en: ["Validated end to end with a complete regression test suite.", "Presented in a live demo to the supervisor."],
       fr: ["Validé de bout en bout avec une suite complète de tests de régression.", "Présenté lors d'une démo live au superviseur."],
     },
+    gallery: ["assets/img/jfc4-architecture.webp"],
+    galleryWide: true,
     notes: { en: "Private internship project, so the code and the internal details are not public.", fr: "Projet de stage privé : le code et les détails internes ne sont pas publics." },
     stack: ["LangChain", "Qwen2.5", "Ollama", "ChromaDB", "BM25", "FastAPI", "React", "Tailwind", "Docker"],
   },
@@ -433,6 +435,26 @@ window.PROJECTS = [
     galleryWide: true,
     stack: ["Python", "NumPy", "Matplotlib", "Streamlit"],
     links: { repo: "https://github.com/rajaeelkamili/LPWAN-Simulation" },
+  },
+  {
+    id: "ransomware-lab", cats: ["cyber"], status: "private", year: "2025",
+    icon: "shield",
+    title: { en: "Ransomware Study and Attack Simulation Lab", fr: "Étude des ransomwares et lab de simulation d'attaque" },
+    org: "SONASID, internship (Stage I)",
+    tag: { en: "Study of ransomware in an industrial setting and a controlled lab showing how basic hardening blocks an attack.", fr: "Étude des ransomwares en milieu industriel et lab contrôlé montrant comment un durcissement de base bloque une attaque." },
+    problem: { en: "Ransomware is a major risk for industrial sites. I wanted to understand how an attack unfolds and which prevention measures really change the outcome.", fr: "Le ransomware est un risque majeur pour les sites industriels. Je voulais comprendre le déroulement d'une attaque et quelles mesures de prévention changent vraiment le résultat." },
+    approach: {
+      en: ["Written study: ransomware types, attack cycle, notable industrial cases, classic prevention (backups, segmentation, patching, endpoint protection).", "Isolated VirtualBox lab: a Kali Linux attacker, one protected Ubuntu machine and one unprotected Ubuntu machine.", "Protection with a UFW firewall (default deny incoming, SSH only) and access rules.", "Educational encryption script run only inside the lab, to compare the two targets.", "Incident Response Plan adapted to industrial constraints."],
+      fr: ["Étude écrite : types de ransomwares, cycle d'attaque, cas industriels marquants, prévention classique (sauvegardes, segmentation, patchs, protection des postes).", "Lab VirtualBox isolé : un attaquant Kali Linux, une machine Ubuntu protégée et une machine Ubuntu non protégée.", "Protection par pare-feu UFW (entrant refusé par défaut, SSH seulement) et règles d'accès.", "Script de chiffrement pédagogique exécuté uniquement dans le lab, pour comparer les deux cibles.", "Plan de réponse à incident adapté aux contraintes industrielles."]
+    },
+    results: {
+      en: ["The unprotected machine had its files encrypted; the same attack was blocked on the protected one.", "40-page internship report."],
+      fr: ["La machine non protégée a vu ses fichiers chiffrés ; la même attaque a été bloquée sur la machine protégée.", "Rapport de stage de 40 pages."]
+    },
+    gallery: ["assets/img/ransom-lab-topology.webp", "assets/img/ransom-lab-firewall.webp", "assets/img/ransom-lab-blocked.webp", "assets/img/ransom-lab-encrypted.webp"],
+    galleryWide: true,
+    notes: { en: "Educational work in an isolated lab. The attack script is deliberately not published.", fr: "Travail pédagogique dans un lab isolé. Le script d'attaque n'est volontairement pas publié." },
+    stack: ["Kali Linux", "Ubuntu", "VirtualBox", "UFW", "SSH", "Python"],
   },
   {
     id: "dms", cats: ["iot", "fullstack"], status: "private", year: "2026",
