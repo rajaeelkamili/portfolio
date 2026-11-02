@@ -35,6 +35,7 @@
     network: '<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5l-5.5 5.5M12 11.5l5.5 5.5"/>',
     search2: '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    shield: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/>',
     moon: '<path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/>',
   };
   function icon(n, w) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + (w || 1.6) + '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICONS[n] || ICONS.grid) + "</svg>"; }
@@ -111,7 +112,7 @@
     });
   }
   function renderFilters() {
-    var t = D[lang].projects.filters, keys = ["all", "agentic", "ml", "fullstack", "mobile", "iot"];
+    var t = D[lang].projects.filters, keys = ["all", "agentic", "ml", "fullstack", "mobile", "iot", "cyber"];
     set("filters", keys.map(function (k) {
       var n = k === "all" ? P.length : P.filter(function (p) { return p.cats.indexOf(k) >= 0; }).length;
       return '<button data-f="' + k + '" class="' + (k === filter ? "on" : "") + '" aria-pressed="' + (k === filter) + '">' + t[k] + '<span class="count">' + n + "</span></button>";
