@@ -124,7 +124,7 @@
   function renderGrid() {
     var t = D[lang].projects, list = visible();
     set("grid", list.length ? list.map(function (p, i) {
-      var shot = p.gallery && !p.galleryWide ? '<img loading="lazy" src="' + p.gallery[0] + '" alt="">' : "";
+      var shot = ""; // cartes uniformes : une icône par projet, les captures restent dans l'étude de cas
       return '<button class="card" data-id="' + p.id + '" style="animation-delay:' + (i * 40) + 'ms" aria-label="' + esc(tx(p.title)) + '">' +
         '<div class="thumb"><span class="pill ' + p.status + '">' + t.status[p.status] + "</span>" + (p.featured ? '<span class="star">★</span>' : "") + icon(p.icon, 1.3) + shot + "</div>" +
         '<div class="body"><small>' + esc(p.year + (p.org ? " · " + tx(p.org) : "")) + "</small><h3>" + esc(tx(p.title)) + "</h3><p>" + esc(tx(p.tag)) + '</p><div class="tags">' +
